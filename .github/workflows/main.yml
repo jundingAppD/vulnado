@@ -35,12 +35,11 @@ jobs:
         SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     # Print critical vulnerabilities found by ShiftLeft
-    - name: setup python
+    - name: Setup python
       uses: actions/setup-python@v2
       with:
         python-version: 3.8 #install the python needed
     - name: Install requests module
       run: pip install requests
-    - name: execute py script
-      run: |
-        python printSL.py
+    - name: Print critical vulnerabilities
+      run: python printSL.py
