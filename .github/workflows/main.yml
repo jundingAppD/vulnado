@@ -6,9 +6,7 @@ on:
   pull_request:
   workflow_dispatch:
   push:
-  branches:
-    - main
-    - master
+    branches: [ master ]
 jobs:
   NG SAST-Build:
     runs-on: ubuntu-latest
