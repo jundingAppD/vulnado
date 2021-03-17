@@ -5,5 +5,9 @@ resp = requests.get("https://www.shiftleft.io/api/v4/orgs/592bbe22-3def-4eb5-b46
 findings = resp.json()['response']['findings']
 print("========== ShiftLeft found the following critical vulnerabilities ==========")
 for v in findings:
-	print("#"+ v['id'] + ": " + v['title'])
+	id = int(v['id'])
+	if (id < 10):
+	  print("#"+ str(id) + ":  " + v['title'])
+	else:
+	  print("#"+ str(id) + ": " + v['title'])
 print("============================================================================")
